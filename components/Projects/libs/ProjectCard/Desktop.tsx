@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { FaGithub } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 import { MediaIcon } from "components";
 import { useHover } from "lib";
@@ -15,7 +15,7 @@ interface Props {
   technologies: string[];
   externalLink: string;
   githubLink: string;
-  imageLink: string;
+  videoLink: string; // can be .mp4 or .gif
   rightShift?: boolean;
 }
 
@@ -26,10 +26,25 @@ export const DesktopProjectCard = ({
   externalLink,
   githubLink,
   technologies,
-  imageLink,
+  videoLink,
   rightShift,
 }: Props) => {
   const [hoverRef, isHovered] = useHover<HTMLAnchorElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isGif = videoLink.toLowerCase().endsWith(".gif");
+
+  const handleMouseEnter = () => {
+    if (!isGif) {
+      videoRef.current?.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isGif && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
 
   return (
     <div className={clsx(styles.container)} style={{ zIndex: 1 }}>
@@ -79,17 +94,15 @@ export const DesktopProjectCard = ({
             rightShift && "md:justify-end"
           )}
         >
-          {githubLink ? (
+          {githubLink && (
             <MediaIcon
               icon={<FaGithub className="w-6 h-6" />}
               href={githubLink}
             />
-          ) : null}
-          <a href={externalLink} download>
-            <FaDownload className="w-6 h-6 text-black-900 dark:text-white-900" />
-          </a>
+          )}
         </div>
       </div>
+
       <motion.div
         className={clsx(
           "absolute md:right-0 md:w-7/12 md:-top-6 top-0 h-full rounded-lg",
@@ -97,27 +110,40 @@ export const DesktopProjectCard = ({
         )}
         style={{ zIndex: -1 }}
         variants={{
-          initial: {
-            y: 0,
-          },
-          hovered: {
-            y: -5,
-          },
+          initial: { y: 0 },
+          hovered: { y: -5 },
         }}
         animate={isHovered ? "hovered" : "initial"}
         initial="initial"
       >
-        <img
-          className="object-cover w-56 h-16 rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80 overflow-hidden"
-          src={imageLink}
-          alt={title}
-          style={{
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
-          }}
-        />
+        {isGif ? (
+          <img
+            src={videoLink}
+            alt={title}
+            className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80 overflow-hidden"
+            style={{
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
+            }}
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            src={videoLink}
+            className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80 overflow-hidden"
+            muted
+            loop
+            preload="metadata"
+            style={{
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
+            }}
+          />
+        )}
       </motion.div>
+
       <a
         ref={hoverRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         target="_blank"
         className={clsx(
           "absolute top-0 h-full rounded-lg md:right-0 md:w-7/12 hidden md:block",

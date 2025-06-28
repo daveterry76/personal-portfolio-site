@@ -33,3 +33,7 @@ yarn-error.log*
 
 # ide
 .idea/
+
+#videos
+*.mp4
+*.mov

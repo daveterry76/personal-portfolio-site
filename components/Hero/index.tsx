@@ -1,7 +1,7 @@
 import { Container, MediaIcon } from "components";
 import { motion } from "framer-motion";
 import { FC } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaPaperclip } from "react-icons/fa";
 
 import { HandWave } from "./libs/HandWave";
 import { HeroLink } from "./libs/HeroLink";
@@ -38,15 +38,14 @@ export const Hero: FC = () => {
         <HandWave className="text-4xl md:text-5xl" />
       </div>
       <p className="text-xl font-bold tracking-normal md:text-3xl text-black-700 dark:text-white-700">
-        Software Engineer (Web/Mobile) <br />
+        Frontend Engineer <br />
         Previously&nbsp;
-        <HeroLink title="TalentOven" href="https://talentoven.vercel.app/" /> and&nbsp;
-        <HeroLink title="Helixgade" href="https://helixgade.com/" />
+        <HeroLink title="STRABL" href="https://strabl.io/" />
       </p>
       <div className="flex mt-8">
         <MediaIcon
           icon={<FaGithub className="w-6 h-6 md:w-7 md:h-7" />}
-          href="https://github.com/daveterry67"
+          href="https://github.com/daveterry76"
           className="mr-4"
         />
         <MediaIcon
@@ -59,20 +58,17 @@ export const Hero: FC = () => {
           href="https://twitter.com/daveterry76"
           className="mr-4"
         />
-        {/* <MediaIcon
+        <MediaIcon
           icon={
             <FaPaperclip className="w-6 h-6 md:w-7 md:h-7 animate-bounce hover:animate-spin" />
           }
-          href="https://docs.google.com/document/d/1HcUOZAxPPBkehKD238K5vjT4gAqxujt3poSGac174Rg/edit?usp=sharing"
-        /> */}
+          href="https://docs.google.com/document/d/1r3fBnffkIBkoF98Ajh8iP9pFbnQMuvZX/edit?usp=sharing&ouid=113785130869700569417&rtpof=true&sd=true"
+        />
       </div>
       <div className="mt-10">
         <p className="mb-4 text-base md:text-xl dark:text-white-700 text-black-700">
-          I am an experienced Web Developer with a proven track record of
+          I am an experienced Frontend Engineer with a proven track record of
           crafting and creating products for global companies.
-        </p>
-        <p className="mb-4 text-base md:text-xl dark:text-white-700 text-black-700">
-          I am also experienced in building Cross-Platform Mobile Applications using React Native.
         </p>
         <p className="mb-4 text-base md:text-xl dark:text-white-700 text-black-700">
           I love collaborating in teams to create aesthetic and scalable web
@@ -80,8 +76,8 @@ export const Hero: FC = () => {
         </p>
         <p className="mb-4 text-base md:text-xl dark:text-white-700 text-black-700">
           I build mostly in JavaScript & TypeScript with a strong proficiency in
-          technologies like React, Nextjs and React Native,
-          though I'm always excited to try out new technologies.
+          technologies like React.js and Next.js, though I'm always excited to
+          try out new technologies.
         </p>
       </div>
     </Container>

@@ -8,22 +8,27 @@ import { Item } from "./libs/Item";
 
 const experience = [
   {
-    title: "Software Engineer",
-    place: "Cypher X",
-    date: "September 2024 - December 2024",
+    title: "Frontend Engineer (Contract)",
+    place: "STRABL Technologies",
+    date: "February 2025 - May 2025",
   },
   {
-    title: "Software Engineer",
+    title: "Frontend Engineer",
+    place: "Cypher X",
+    date: "September 2024 - Present",
+  },
+  {
+    title: "Frontend Developer",
     place: "Hagion International Limited",
     date: "March 2024 - December 2024",
   },
   {
-    title: "Software Engineer",
+    title: "Frontend Engineer",
     place: "TalentOven Limited (Contract)",
     date: "December 2023 - August 2024",
   },
   {
-    title: "Frontend Engineer",
+    title: "Next.js Developer (Contract)",
     place: "Meghee",
     date: "June 2024 - July 2024",
   },

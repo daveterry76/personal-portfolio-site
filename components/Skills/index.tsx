@@ -2,8 +2,8 @@ import { Container, Section } from "components";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect } from "react";
 import { FaReact } from "react-icons/fa";
-import { TbBrandReactNative } from "react-icons/tb";
-import { SiFirebase, SiGraphql } from "react-icons/si";
+import { SiFirebase, SiGraphql, SiTailwindcss, SiRedux } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
 import { TsIcon } from "./libs/Icons";
@@ -11,19 +11,24 @@ import { Skill } from "./libs/Skill";
 
 const skills = [
   {
+    name: "Next.js",
+    href: "https://www.next.js.org/",
+    icon: <TbBrandNextjs />,
+  },
+  {
+    name: "React.js",
+    href: "https://reactjs.org/",
+    icon: <FaReact color="#00D8FF" />,
+  },
+  {
     name: "TypeScript",
     href: "https://www.typescriptlang.org/",
     icon: <TsIcon />,
   },
   {
-    name: "React",
-    href: "https://reactjs.org/",
-    icon: <FaReact color="#00D8FF" />,
-  },
-  {
-    name: "React Native",
-    href: "https://reactjs.org/",
-    icon: <TbBrandReactNative color="#00D8FF" />,
+    name: "Tailwind CSS",
+    href: "https://tailwindcss.com/",
+    icon: <SiTailwindcss color="#38B2AC" />,
   },
   {
     name: "Firebase",
@@ -34,6 +39,11 @@ const skills = [
     name: "GraphQL",
     href: "https://graphql.org/",
     icon: <SiGraphql color="#E535AB" />,
+  },
+  {
+    name: "Redux",
+    href: "https://redux.js.org/",
+    icon: <SiRedux color="#764ABC" />,
   },
 ];
 

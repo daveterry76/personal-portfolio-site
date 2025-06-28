@@ -6,55 +6,55 @@ import { MobileProjectCard } from "./libs/ProjectCard/Mobile";
 
 const projects = [
   {
-    title: "CryptoKeeper",
+    title: "STRABL Merchant/Customer Dashboard",
     subtitle: "",
     description:
-      "A modern solution for managing cryptocurrency portfolios with a focus on security and user-friendly interfaces.",
-    technologies: ["React Native", "TypeScript"],
-    externalLink: "/files/CryptoKeeper.aab",
+      "A merchant dashboard for a supercharged checkout & payment solution for e-commerce and digital transactions.",
+    technologies: ["React.js, Tailwind CSS, Redux & Redux Toolkit"],
+    externalLink: "https://dashboard.strabl.io/",
     githubLink: "",
-    imageLink: `/images/cryptokeeper.jpg`,
+    videoLink: `/videos/strabl.webm`,
   },
   {
-    title: "Dashify",
+    title: "Fewchore Finance Fintech Web Application",
     subtitle: "",
     description:
-      "A streamlined dashboard tool for visualizing and managing data effectively, tailored for scalability and performance.",
-    technologies: ["React Native"],
-    externalLink: "/files/Dashify.aab",
+      "Fewchore Finance Company Limited is an avant-garde financial services company, providing consumer & business loans, local & international trade financing, oil & gas services financing, and other first-rate financial services to clients.",
+    technologies: ["React.js, SCSS"],
     githubLink: "",
-    imageLink: `/images/dashify.jpg`,
+    videoLink: `/videos/fewchore.webm`,
+    externalLink: "https://ibank.fewchoremobile.com/",
   },
   {
-    title: "QuickCV",
+    title: "Cypher X Web Application",
     subtitle: "",
     description:
-      "A platform to easily create professional resumes and showcase skills, experience, and education in a streamlined way.",
-    technologies: ["React Native, TypeScript"],
-    externalLink: "/files/QuickCV.aab",
-    githubLink: "https://github.com/Dearestchoice/NfTicket",
-    imageLink: `/images/quick-cv.jpg`,
+      "A streamlined web application that provides seamless global e-commerce solution, allowing users to make secure transactions.",
+    technologies: ["React.js, Bootstrap"],
+    githubLink: "",
+    videoLink: `/videos/cypherx.webm`,
+    externalLink: "https://app-staging.cypherxwallet.com/",
   },
   {
-    title: "JobHive",
+    title: "Picadailys Admin Dashboard",
     subtitle: "",
     description:
-      "A job search platform that allows users to filter and search for job opportunities with ease, designed to connect employers and job seekers.",
-    technologies: ["React Native"],
-    externalLink: "/files/JobHive.aab",
-    githubLink: "https://github.com/andemosa/creon",
-    imageLink: "/images/jobhive.jpg",
+      "A performant dashboard for the Picadailys mobile application, which helps you to market your brand to your target audience by creating ads campaign and content for your brand's advertisement.",
+    technologies: ["React.js, SCSS"],
+    externalLink: "https://admin.picadailys.com/",
+    githubLink: "",
+    videoLink: "/videos/picadailys.gif",
   },
-  {
-    title: "EduTrack",
-    subtitle: "",
-    description:
-      "A classroom application for students to manage their tasks, assignments, and schedule, helping them stay organized and on track.",
-    technologies: ["React Native"],
-    externalLink: "/files/EduTrack.aab",
-    githubLink: "https://github.com/andemosa/task-app",
-    imageLink: `/images/edutrack.jpg`,
-  },
+  // {
+  //   title: "Klosanow",
+  //   subtitle: "",
+  //   description:
+  //     "An Edtech product that allows tutors in Sub-saharan Africa create pre recorded video lessons.",
+  //   technologies: ["React.js"],
+  //   externalLink: "https://klosanow.com/",
+  //   githubLink: "",
+  //   videoLink: `/images/edutrack.jpg`,
+  // },
 ];
 
 export const Projects: FC = () => {
@@ -63,7 +63,7 @@ export const Projects: FC = () => {
       className="mt-16 mb-16 md:mt-24"
       title={"Projects"}
       description={
-        "Here are some of my favourite projects that I enjoyed working on during my free time."
+        "Here are some of my favourite projects that I have worked on. I hope you like them as much as I do!"
       }
     >
       <div className="px-4 mx-auto mt-10 md:hidden max-w-screen-md grid grid-cols-1 gap-4 place-items-center">
