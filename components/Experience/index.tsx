@@ -8,34 +8,46 @@ import { Item } from "./libs/Item";
 
 const experience = [
   {
-    title: "Frontend Engineer (Contract)",
-    place: "STRABL Technologies",
-    date: "February 2025 - May 2025",
+    title: "Frontend Engineer",
+    place: "Picadailys",
+    date: "November 2025 – Present",
+  },
+  {
+    title: "Frontend Developer",
+    place: "Proliance Limited",
+    date: "July 2025 – November 2025",
   },
   {
     title: "Frontend Engineer",
-    place: "Cypher X",
-    date: "September 2024 - Present",
+    place: "STRABL Technologies",
+    date: "February 2025 – May 2025",
+    highlight: true,
+  },
+  {
+    title: "Frontend Developer",
+    place: "CypherX Limited",
+    date: "September 2024 – January 2025",
   },
   {
     title: "Frontend Developer",
     place: "Hagion International Limited",
-    date: "March 2024 - December 2024",
-  },
-  {
-    title: "Frontend Engineer",
-    place: "TalentOven Limited (Contract)",
-    date: "December 2023 - August 2024",
-  },
-  {
-    title: "Next.js Developer (Contract)",
-    place: "Meghee",
-    date: "June 2024 - July 2024",
+    date: "March 2024 – January 2025",
   },
   {
     title: "Frontend Developer",
-    place: "Helixgade Technologies (Contract)",
-    date: "April 2022 - December 2022",
+    place: "Talentoven Limited",
+    date: "December 2023 – August 2024",
+    highlight: true,
+  },
+  {
+    title: "Frontend Engineer",
+    place: "Meghee",
+    date: "June 2024 – July 2024",
+  },
+  {
+    title: "Frontend Developer",
+    place: "Helixgade Technologies",
+    date: "March 2022 – January 2023",
   },
 ];
 
@@ -58,7 +70,7 @@ export const Experience: FC = () => {
       className="mt-16 mb-16 md:mt-24"
       title={"Experience"}
       description={
-        "I've had the honour of working at these amazing companies. Hopefully your company will be there too."
+        "I've had the honour of building fintech and payments products for companies across Africa, the Middle East, and beyond."
       }
     >
       <Container className="mt-14">
@@ -66,24 +78,24 @@ export const Experience: FC = () => {
           {mdScreen ? (
             <>
               <div>
-                {experience.slice(0, 2).map((item, i) => (
+                {experience.slice(0, 4).map((item, i) => (
                   <Item
                     {...item}
                     key={i}
                     first={i === 0}
-                    last={i === 1}
+                    last={i === 3}
                     controls={controls}
                     custom={i}
                   />
                 ))}
               </div>
               <div>
-                {experience.slice(2).map((item, i) => (
+                {experience.slice(4).map((item, i) => (
                   <Item
                     {...item}
                     key={i}
                     first={i === 0}
-                    last={i === 1}
+                    last={i === experience.slice(4).length - 1}
                     controls={controls}
                     custom={i}
                   />
