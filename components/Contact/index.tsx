@@ -7,9 +7,9 @@ export const Contact: FC = () => {
   return (
     <Section
       className="mt-16 mb-16 md:mt-28"
-      title={"Want to connect?"}
+      title={"Let's work together"}
       description={
-        "I really appreciate it when people go out of their way to get in touch. I'll make sure to get back to you as soon as possible!"
+        "Open to full-time roles and interesting projects. Send me a message and I'll get back to you as soon as possible."
       }
     >
       <Container className="my-4 flex justify-center">
