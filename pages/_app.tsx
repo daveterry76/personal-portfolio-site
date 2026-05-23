@@ -9,12 +9,14 @@ import SEO from "../next-seo.config";
 
 const keywords = [
   "David",
-  "David Dappa",
-  "Software Developer",
-  "Web Developer",
+  "Dappa David",
+  "Frontend Engineer",
   "React Developer",
+  "Next.js Developer",
+  "TypeScript Developer",
+  "Fintech Engineer",
+  "Payments Engineer",
   "Frontend Web Developer",
-  "Frontend Mobile Developer",
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
