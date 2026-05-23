@@ -13,14 +13,7 @@ export const Form = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    // const formData = new FormData(formRef.current);
-    // const data = Object.fromEntries(formData);
-
-    setFormData({
-      error: "",
-      loading: true,
-      submitted: false,
-    });
+    setFormData({ error: "", loading: true, submitted: false });
     try {
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ?? "",
@@ -28,11 +21,7 @@ export const Form = () => {
         formRef.current,
         process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? ""
       );
-      setFormData({
-        error: "",
-        loading: false,
-        submitted: true,
-      });
+      setFormData({ error: "", loading: false, submitted: true });
     } catch (error: any) {
       setFormData({
         error: error.message ?? "An error occurred",
@@ -44,16 +33,19 @@ export const Form = () => {
 
   const { error, loading, submitted } = formData;
 
+  const inputClass =
+    "w-full border border-gray-200 rounded-lg p-3 text-sm text-black-900 dark:text-white-900 dark:bg-gray-900 dark:border-gray-700 outline-none focus:ring-2 focus:ring-blue-700 transition-all duration-200 placeholder:text-gray-700";
+
   return (
     <form
       ref={formRef}
-      className="max-w-lg flex flex-col gap-4 w-full mt-4"
+      className="max-w-lg flex flex-col gap-5 w-full mt-4"
       onSubmit={handleContact}
     >
-      <div>
+      <div className="flex flex-col gap-1.5">
         <label
           htmlFor="name"
-          className="block mb-2 text-sm font-medium text-black-700 dark:text-white-700"
+          className="text-sm font-medium text-black-700 dark:text-white-700"
         >
           Your name
         </label>
@@ -61,15 +53,16 @@ export const Form = () => {
           type="text"
           id="name"
           name="name"
-          className="text-gray-900 border text-sm rounded-lg w-full p-2.5 dark:bg-gray-900 dark:text-white-900"
+          className={inputClass}
           placeholder="John Doe"
           required
         />
       </div>
-      <div>
+
+      <div className="flex flex-col gap-1.5">
         <label
           htmlFor="email"
-          className="block mb-2 text-sm font-medium text-black-700 dark:text-white-700"
+          className="text-sm font-medium text-black-700 dark:text-white-700"
         >
           Your email
         </label>
@@ -77,15 +70,16 @@ export const Form = () => {
           type="email"
           id="email"
           name="email"
-          className="text-gray-900 border text-sm rounded-lg w-full p-2.5 dark:bg-gray-900 dark:text-white-900"
+          className={inputClass}
           placeholder="name@example.com"
           required
         />
       </div>
-      <div>
+
+      <div className="flex flex-col gap-1.5">
         <label
           htmlFor="subject"
-          className="block mb-2 text-sm font-medium text-black-700 dark:text-white-700"
+          className="text-sm font-medium text-black-700 dark:text-white-700"
         >
           Subject
         </label>
@@ -93,37 +87,39 @@ export const Form = () => {
           type="text"
           id="subject"
           name="subject"
-          className="text-gray-900 border text-sm rounded-lg w-full p-2.5 dark:bg-gray-900 dark:text-white-900"
+          className={inputClass}
           placeholder="Let me know how I can help you"
           required
         />
       </div>
-      <div>
+
+      <div className="flex flex-col gap-1.5">
         <label
           htmlFor="message"
-          className="block mb-2 text-sm font-medium text-black-700 dark:text-white-700"
+          className="text-sm font-medium text-black-700 dark:text-white-700"
         >
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
-          className="text-gray-900 border text-sm rounded-lg w-full p-2.5 dark:bg-gray-900 dark:text-white-900 resize-none"
-          placeholder="Leave a comment..."
+          rows={5}
+          className={`${inputClass} resize-none`}
+          placeholder="Tell me about the role or project..."
           required
-        ></textarea>
+        />
       </div>
+
       <button
         type="submit"
-        className="text-white-900 bg-blue-900 transform hover:scale-y-105 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-2 dark:bg-blue-900 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        className="w-full text-white-900 bg-blue-900 hover:bg-blue-700 font-semibold rounded-lg text-sm px-5 py-3 mt-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-700 disabled:opacity-50"
         disabled={loading || submitted}
       >
         {loading ? (
-          <div role="status" className="flex justify-center items-center">
+          <div role="status" className="flex justify-center items-center gap-2">
             <svg
               aria-hidden="true"
-              className="w-8 h-8 mr-2 text-white-900 animate-spin dark:text-white-700 fill-blue-700"
+              className="w-5 h-5 animate-spin text-white-900 fill-blue-700"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -137,20 +133,18 @@ export const Form = () => {
                 fill="currentFill"
               />
             </svg>
-            <span className="sr-only">Loading...</span>
+            <span>Sending...</span>
           </div>
+        ) : submitted ? (
+          "Message sent! I'll be in touch soon ✓"
         ) : (
-          "Submit"
+          "Send Message"
         )}
       </button>
+
       {error && (
-        <p className="mt-2 font-semibold text-center text-red-600 dark:text-red-500">
+        <p className="text-sm font-semibold text-center text-red-600 dark:text-red-500">
           {error}
-        </p>
-      )}
-      {submitted && (
-        <p className="mt-2 font-semibold text-center text-blue-900 dark:text-blue-700">
-          Message sent successfully!
         </p>
       )}
     </form>
