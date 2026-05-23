@@ -2,7 +2,7 @@ import { Container, Section } from "components";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect } from "react";
 import { FaReact } from "react-icons/fa";
-import { SiFirebase, SiGraphql, SiTailwindcss, SiRedux } from "react-icons/si";
+import { SiFirebase, SiGraphql, SiTailwindcss, SiRedux, SiStripe, SiZod } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
@@ -12,7 +12,7 @@ import { Skill } from "./libs/Skill";
 const skills = [
   {
     name: "Next.js",
-    href: "https://www.next.js.org/",
+    href: "https://nextjs.org/",
     icon: <TbBrandNextjs />,
   },
   {
@@ -31,9 +31,9 @@ const skills = [
     icon: <SiTailwindcss color="#38B2AC" />,
   },
   {
-    name: "Firebase",
-    href: "https://firebase.google.com/",
-    icon: <SiFirebase color="#FF8F00" />,
+    name: "Redux",
+    href: "https://redux.js.org/",
+    icon: <SiRedux color="#764ABC" />,
   },
   {
     name: "GraphQL",
@@ -41,9 +41,19 @@ const skills = [
     icon: <SiGraphql color="#E535AB" />,
   },
   {
-    name: "Redux",
-    href: "https://redux.js.org/",
-    icon: <SiRedux color="#764ABC" />,
+    name: "Stripe",
+    href: "https://stripe.com/",
+    icon: <SiStripe color="#635BFF" />,
+  },
+  {
+    name: "Firebase",
+    href: "https://firebase.google.com/",
+    icon: <SiFirebase color="#FF8F00" />,
+  },
+  {
+    name: "Zod",
+    href: "https://zod.dev/",
+    icon: <SiZod color="#3068B7" />,
   },
 ];
 
@@ -65,12 +75,12 @@ export const Skills: FC = () => {
       className="md:mt-20 mt-14"
       title={"Skills"}
       description={
-        "I'm always excited to try out the latest and greatest technologies, but these are some of the tools and technologies I currently use"
+        "These are the core tools and technologies I use day-to-day, with a strong focus on the React ecosystem and fintech integrations."
       }
     >
       <Container>
         <div
-          className="max-w-xl mt-8 grid grid-cols-2 lg:grid-cols-3 gap-6"
+          className="max-w-xl mt-8 grid grid-cols-3 lg:grid-cols-3 gap-6"
           ref={ref}
         >
           {skills.map((skill, i) => (
