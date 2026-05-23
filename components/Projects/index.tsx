@@ -6,55 +6,45 @@ import { MobileProjectCard } from "./libs/ProjectCard/Mobile";
 
 const projects = [
   {
-    title: "STRABL Merchant/Customer Dashboard",
+    title: "STRABL Merchant & Admin Dashboard",
     subtitle: "",
     description:
-      "A merchant dashboard for a supercharged checkout & payment solution for e-commerce and digital transactions.",
-    technologies: ["React.js, Tailwind CSS, Redux & Redux Toolkit"],
+      "Payment infrastructure dashboard for a Dubai-based fintech. Features subscription management, KYC document workflows, and integrated Stripe & Paymob payment gateways for e-commerce and digital transactions.",
+    technologies: ["React.js", "TypeScript", "Redux", "Tailwind CSS"],
     externalLink: "https://dashboard.strabl.io/",
     githubLink: "",
     videoLink: `/videos/strabl.webm`,
   },
   {
-    title: "Fewchore Finance Fintech Web Application",
+    title: "Fewchore Finance Internet Banking App",
     subtitle: "",
     description:
-      "Fewchore Finance Company Limited is an avant-garde financial services company, providing consumer & business loans, local & international trade financing, oil & gas services financing, and other first-rate financial services to clients.",
-    technologies: ["React.js, SCSS"],
+      "Full-featured internet banking platform offering consumer & business loans, local & international trade financing, oil & gas services financing, and financial dashboards for retail and business customers.",
+    technologies: ["React.js", "SCSS"],
     githubLink: "",
     videoLink: `/videos/fewchore.webm`,
     externalLink: "https://ibank.fewchoremobile.com/",
   },
   {
-    title: "Cypher X Web Application",
+    title: "Picadailys Website",
     subtitle: "",
     description:
-      "A streamlined web application that provides seamless global e-commerce solution, allowing users to make secure transactions.",
-    technologies: ["React.js, Bootstrap"],
+      "Public-facing marketing website for a brand advertising and content creation platform, helping businesses across Africa create targeted ad campaigns and branded content.",
+    technologies: ["Next.js", "React.js", "Chart.js"],
+    externalLink: "https://picadailys.com/",
     githubLink: "",
-    videoLink: `/videos/cypherx.webm`,
-    externalLink: "https://app-staging.cypherxwallet.com/",
+    videoLink: `/videos/picadailys.gif`,
   },
   {
-    title: "Picadailys Admin Dashboard",
+    title: "CypherX Wallet Website",
     subtitle: "",
     description:
-      "A performant dashboard for the Picadailys mobile application, which helps you to market your brand to your target audience by creating ads campaign and content for your brand's advertisement.",
-    technologies: ["React.js, SCSS"],
-    externalLink: "https://admin.picadailys.com/",
+      "Website for a crypto wallet product enabling seamless global e-commerce and secure digital transactions for users across Africa.",
+    technologies: ["React.js", "Bootstrap"],
     githubLink: "",
-    videoLink: "/videos/picadailys.gif",
+    videoLink: `/videos/cypherx.webm`,
+    externalLink: "https://cypherxwallet.com/",
   },
-  // {
-  //   title: "Klosanow",
-  //   subtitle: "",
-  //   description:
-  //     "An Edtech product that allows tutors in Sub-saharan Africa create pre recorded video lessons.",
-  //   technologies: ["React.js"],
-  //   externalLink: "https://klosanow.com/",
-  //   githubLink: "",
-  //   videoLink: `/images/edutrack.jpg`,
-  // },
 ];
 
 export const Projects: FC = () => {
@@ -63,7 +53,7 @@ export const Projects: FC = () => {
       className="mt-16 mb-16 md:mt-24"
       title={"Projects"}
       description={
-        "Here are some of my favourite projects that I have worked on. I hope you like them as much as I do!"
+        "A selection of fintech, payments, and web products I've helped design and build."
       }
     >
       <div className="px-4 mx-auto mt-10 md:hidden max-w-screen-md grid grid-cols-1 gap-4 place-items-center">
