@@ -5,10 +5,10 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // whenever dark mode is present in html root, dark mode will be applied.
+  darkMode: "class",
   theme: {
     colors: {
-      darkTheme: "#171a23",
+      darkTheme: "#0f1117",
       white: {
         900: "#ffffff",
         700: "#C9C9CB",
@@ -30,21 +30,15 @@ module.exports = {
       },
       red: {
         500: "#ef4444",
-        600: "#dc2626"
+        600: "#dc2626",
       },
       pink: "#EEE8F6",
     },
     extend: {
       keyframes: {
         fadeIn: {
-          "0%": {
-            opacity: 0,
-            transform: "translateY(10px)",
-          },
-          "100%": {
-            opacity: 1,
-            transform: "none",
-          },
+          "0%": { opacity: 0, transform: "translateY(10px)" },
+          "100%": { opacity: 1, transform: "none" },
         },
       },
       animation: {
@@ -54,7 +48,7 @@ module.exports = {
         top: "top",
       },
       fontFamily: {
-        sans: ["Rubik", ...defaultTheme.fontFamily.sans],
+        sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         "5xl": "2.8125rem",
